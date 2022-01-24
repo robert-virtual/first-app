@@ -1,9 +1,10 @@
+const { getAll, getOne, login, register } = require("../controllers/users");
+
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    msg: "Hola mundo",
-  });
-});
+router.get("/", getAll);
+router.get("/:id", getOne);
+router.post("/", register);
+router.post("/login", login);
 
 module.exports = router;

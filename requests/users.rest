@@ -1,3 +1,26 @@
 
 
-GET http://localhost:3000/users
+### obtener todos
+GET http://localhost:3000/api/users
+
+### obtener 1
+GET http://localhost:3000/api/users/25
+
+### registro - crear usuario
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "personaFk":1,
+    "nombreUsuario":"Robertc14",
+    "email":"robertc12@gmail.com",
+    "clave":"password"
+}
+
+### login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "password":"P@ssw0rd"
+}

@@ -1,0 +1,17 @@
+
+
+### obtener todos
+GET http://localhost:3000/api/people
+
+### obtener uno
+GET http://localhost:3000/api/people/1
+### crear uno
+POST http://localhost:3000/api/people
+Content-Type: application/json
+
+{
+    "nombre":"Emerson", 
+    "apellido":"Castillo", 
+    "telefono":"99145811", 
+    "tipo":"cliente"
+}
