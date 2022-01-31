@@ -3,7 +3,7 @@ const { hash, compare } = require("bcrypt");
 const User = require("../models/User");
 const validate = require("../helpers/validate");
 
-async function login(req = request, res = response) {
+exports.login = async function (req = request, res = response) {
   const { password } = req.body;
   const storedPassword = await hash("P@ssw0rd", 12);
   const valid = await compare(password, storedPassword);
@@ -17,9 +17,9 @@ async function login(req = request, res = response) {
     password,
     msg: "Acceso autorizado, Bienvenido",
   });
-}
+};
 // registro
-async function register(req = request, res = response) {
+exports.register = async function (req = request, res = response) {
   let errors = validate(req.body, [
     "nombreUsuario",
     "email",
@@ -48,15 +48,13 @@ async function register(req = request, res = response) {
   } catch (error) {
     res.json({ error: error.toString() });
   }
-}
+};
 
-async function getAll(req = request, res = response) {
+exports.getAll = async function (req = request, res = response) {
   const users = await User.findAll();
-  res.json({
-    users,
-  });
-}
-async function getOne(req = request, res = response) {
+  res.json(users);
+};
+exports.getOne = async function (req = request, res = response) {
   const { id } = req.params;
   try {
     const user = await User.findOne({ where: { nombreUsuario: id } });
@@ -71,11 +69,7 @@ async function getOne(req = request, res = response) {
       error: error.toString(),
     });
   }
-}
-
-module.exports = {
-  getAll,
-  getOne,
-  register,
-  login,
 };
+
+exports.updateUser = async () => {};
+exports.deleteUser = async () => {};

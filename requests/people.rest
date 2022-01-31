@@ -1,17 +1,34 @@
 
 
-### obtener todos
 GET http://localhost:3000/api/people
 
-### obtener uno
-GET http://localhost:3000/api/people/1
-### crear uno
+
+
+### crear
 POST http://localhost:3000/api/people
 Content-Type: application/json
 
 {
-    "nombre":"Emerson", 
-    "apellido":"Castillo", 
-    "telefono":"99145811", 
+    "nombre":"Emilio", 
+    "apellido":"valle", 
+    "telefono":"89854578", 
     "tipo":"cliente"
 }
+
+
+### Actualizar
+PUT http://localhost:3000/api/people/2
+Content-Type: application/json
+
+{
+    "imagenUrl":"images.unsplash.com/photo-1492681290082-e932832941e6"
+}
+
+### obtener uno
+GET http://localhost:3000/api/people/2
+
+### eliminar
+DELETE http://localhost:3000/api/people/2
+
+
+
