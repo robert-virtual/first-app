@@ -1,0 +1,32 @@
+
+
+GET http://localhost:3000/api/tipos
+
+
+
+### crear
+POST http://localhost:3000/api/tipos
+Content-Type: application/json
+
+{
+    "nombre":"ropa" 
+    
+}
+
+
+### Actualizar
+PUT http://localhost:3000/api/tipos/1
+Content-Type: application/json
+
+{
+    "imagen":"images.unsplash.com/photo-1492681290082-e932832941e6"
+}
+
+### obtener uno
+GET http://localhost:3000/api/tipos/1
+
+### eliminar
+DELETE http://localhost:3000/api/tipos/2
+
+
+
